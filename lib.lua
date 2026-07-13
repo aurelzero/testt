@@ -2514,7 +2514,7 @@ function Menu.HandleInput()
             if Susano and Susano.GetAsyncKeyState then
                 local upDown, upPressed = Susano.GetAsyncKeyState(0x26)
                 local downDown, downPressed = Susano.GetAsyncKeyState(0x28)
-                local aDown, aPressed = Susano.GetAsyncKeyState(0x41)
+                local aDown, aPressed = Susano.GetAsyncKeyState(0x51)
                 local eDown, ePressed = Susano.GetAsyncKeyState(0x45)
                 local backDown, backPressed = Susano.GetAsyncKeyState(0x08)
                 local leftDown, leftPressed = Susano.GetAsyncKeyState(0x25)
@@ -2523,7 +2523,7 @@ function Menu.HandleInput()
 
                 local upWasDown = Menu.KeyStates[0x26] or false
                 local downWasDown = Menu.KeyStates[0x28] or false
-                local aWasDown = Menu.KeyStates[0x41] or false
+                local aWasDown = Menu.KeyStates[0x51] or false
                 local eWasDown = Menu.KeyStates[0x45] or false
                 local backWasDown = Menu.KeyStates[0x08] or false
                 local leftWasDown = Menu.KeyStates[0x25] or false
