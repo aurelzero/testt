@@ -2110,27 +2110,26 @@ function Menu.Render()
         if not success then
         end
     end
-
-    if Susano.SubmitFrame then
         -- ============================
--- ACTION ITEM ACTIVATION (ENTER)
--- ============================
-        if IsControlJustPressed(0, 191) then  -- ENTER key
-            local category = Menu.Categories[Menu.CurrentCategory]
-            if category and category.tabs then
-                local tab = category.tabs[Menu.CurrentTab]
-                if tab and tab.items then
-                    local item = tab.items[Menu.CurrentItem]
-                    if item and item.type == "action" and item.onClick then
-                        local ok, err = pcall(item.onClick)
-                        if not ok then
-                            print("Error in onClick:", err)
-                        end
+    -- ACTION ITEM ACTIVATION (ENTER)
+    -- ============================
+    if IsControlJustPressed(0, 191) then  -- ENTER key
+        local category = Menu.Categories[Menu.CurrentCategory]
+        if category and category.tabs then
+            local tab = category.tabs[Menu.CurrentTab]
+            if tab and tab.items then
+                local item = tab.items[Menu.CurrentItem]
+                if item and item.type == "action" and item.onClick then
+                    local ok, err = pcall(item.onClick)
+                    if not ok then
+                        print("Error in onClick:", err)
                     end
                 end
             end
         end
+    end
 
+    if Susano.SubmitFrame then
         Susano.SubmitFrame()
     end
 
